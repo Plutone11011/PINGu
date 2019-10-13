@@ -10,18 +10,16 @@
     "48": "logo192.png"
   },
 
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "<all_urls>"
+  ],
+
   "browser_action": {
     "default_icon": "logo192.png",
     "default_title": "Ping",
     "default_popup": "index.html"
-  },
-
-
-  "content_scripts": [
-    {
-      "matches": ["*://*/*"],
-      "js": ["borderify.js"]
-    }
-  ]
+  }
 
 }
