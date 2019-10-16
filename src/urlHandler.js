@@ -3,7 +3,7 @@ import Psl from 'psl';
 
 function extractHostname(url){
     var hostname;
-    //find & remove protocol (http, ftp, etc.) and get hostname
+    //find and remove protocol (http, ftp, etc.) and get hostname
 
     if (url.indexOf("//") > -1) {
         hostname = url.split('/')[2];
@@ -12,11 +12,11 @@ function extractHostname(url){
         hostname = url.split('/')[0];
     }
 
-    //find & remove port number
+    //find and remove port number
     hostname = hostname.split(':')[0];
-    //find & remove "?"
+    //find and remove "?"
     hostname = hostname.split('?')[0];
-    console.log("Hostname: "+hostname);
+    console.log("Hostname: "+ hostname);
     return hostname;
 }
 
@@ -25,7 +25,7 @@ function getPage(callback){
         browser.tabs.query({currentWindow: true, active: true})
         .then((tabs) => {
           console.log("Full url: "+tabs[0].url);
-          callback(Psl.get(extractHostname(tabs[0].url)));
+          callback(extractHostname(tabs[0].url));
         });
 }
 

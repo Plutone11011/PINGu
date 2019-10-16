@@ -21,6 +21,7 @@ class App extends React.Component {
   //every time index is mounted find current url and pass it as props to rtt component
   componentDidMount(){
     getPage((domainName) => {
+      console.log("domainName: "+domainName);
       this.setState({url: domainName});
     })
   }
@@ -45,7 +46,6 @@ class App extends React.Component {
   }
 }
 
-console.log("Passa di qui");
 ReactDOM.render(<App/>, document.getElementById('root'));
 //ReactDOM.render(<App />, document.getElementById('root'));
 
