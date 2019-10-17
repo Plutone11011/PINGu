@@ -3,6 +3,7 @@ import ping from 'node-http-ping' ;
 //import './styles/Rtt.css';
 import CircularIndeterminate from './circularIndeterminate.js';
 import ButtonTemplate from './buttonTemplate';
+import browser from 'webextension-polyfill';
 
 
 class Rtt extends Component{
@@ -33,6 +34,15 @@ class Rtt extends Component{
         this.setState({buttonState: this.buttonStates.loading});
         ping(this.props.url)
                 .then(RTT =>{
+                    var bg = browser.runtime.getBackgroundPage() ;
+                    bg.then(function OnGot(page){
+                        const history = new page.ping_history(); 
+                        history.addPing(RTT);
+                        console.log(history.getHistory());
+                    }, function OnError(error){
+                        console.log("Couldn't find bg: "+ error);
+                    });
+                    //bg.ping_history.addPing(RTT);
                     this.setState({rtt: RTT, buttonState: this.buttonStates.success});
                 }) 
                 .catch(() => {
@@ -51,7 +61,7 @@ class Rtt extends Component{
                 );
             case 'loading':
                 return(
-                    <ButtonTemplate onclick={this.pingOnClick} content={<CircularIndeterminate/>}></ButtonTemplate>
+                    <CircularIndeterminate/>
                 );
             case 'success':
                 return(

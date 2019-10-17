@@ -17,6 +17,10 @@
     "<all_urls>"
   ],
 
+  "background": {
+    "scripts": ["./background-scripts/pingHistory.js"]
+  },
+
   "browser_action": {
     "default_icon": "icons8-penguin-48.png",
     "default_title": "Ping",
