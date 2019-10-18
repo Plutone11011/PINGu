@@ -1,5 +1,4 @@
 import browser from 'webextension-polyfill';
-import Psl from 'psl';
 
 function extractHostname(url){
     var hostname;

@@ -5,10 +5,11 @@
   "dependencies": {
     "@material-ui/core": "^4.5.1",
     "node-http-ping": "^0.3.1",
-    "psl": "^1.4.0",
     "react": "^16.8.6",
+    "react-burger-menu": "^2.6.11",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0",
+    "react-vis": "^1.11.7",
     "typescript": "^3.6.4",
     "webextension-polyfill": "^0.5.0"
   },

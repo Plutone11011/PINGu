@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import ping from 'node-http-ping' ;
 //import './styles/Rtt.css';
-import CircularIndeterminate from './circularIndeterminate.js';
-import ButtonTemplate from './buttonTemplate';
+import CircularIndeterminate from './button/circularIndeterminate';
+import ButtonTemplate from './button/buttonTemplate';
 import browser from 'webextension-polyfill';
 
 
@@ -65,7 +65,7 @@ class Rtt extends Component{
                 );
             case 'success':
                 return(
-                    <ButtonTemplate onclick={this.pingOnClick} content={this.state.rtt}></ButtonTemplate>
+                    <ButtonTemplate onclick={this.pingOnClick} content={`${this.state.rtt} ms`}></ButtonTemplate>
                 );
             case 'failure':
                 
