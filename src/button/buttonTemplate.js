@@ -12,17 +12,17 @@ class buttonTemplate extends React.Component{
         
         const pingButton = {
             padding: 15,
-            height: 100,
-            width: 100,  /*The Width must be the same as the height*/
-            borderRadius:200, /*Then Make the Border Radius twice the size of width or Height*/   
-            backgroundColor: 'rgb(0,32,255)',
-            opacity: 0.2
+            height:200,
+            width: 200,  /*The Width must be the same as the height*/
+            borderRadius:400, /*Then Make the Border Radius twice the size of width or Height*/   
+            backgroundColor: 'rgb(0,0,255)',
+            opacity: 1
         };
 
         return (
             <div style={containerButton}>
                 <button style={pingButton} onClick={this.props.onclick}>
-                    <span style={{fontSize:"10px",fontWeight:"bold", color:"white"}}>{this.props.content}</span>
+                    <span style={{fontSize:"20px",fontWeight:"bold", color:"white"}}>{this.props.content}</span>
                 </button>
             </div>
         );

@@ -13,7 +13,7 @@ class HamburgerMenu extends React.Component {
     return (
       <Menu>
         <a id="home" className="menu-item" href="/">Home</a>
-        <a id="about" className="menu-item" href="/about">About</a>
+        <a id="statistics" className="menu-item" href="/statistics">About</a>
         <a id="contact" className="menu-item" href="/contact">Contact</a>
         <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
       </Menu>
@@ -21,4 +21,5 @@ class HamburgerMenu extends React.Component {
   }
 }
 
-ReactDOM.render(<HamburgerMenu/>, document.getElementById("menu"));
+//ReactDOM.render(<HamburgerMenu/>, document.getElementById("menu"));
+export default HamburgerMenu ; 

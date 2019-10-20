@@ -61,7 +61,7 @@ class Rtt extends Component{
                 );
             case 'loading':
                 return(
-                    <CircularIndeterminate/>
+                    <ButtonTemplate content={<CircularIndeterminate/>}></ButtonTemplate>
                 );
             case 'success':
                 return(
